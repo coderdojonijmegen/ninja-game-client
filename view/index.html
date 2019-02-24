@@ -5,9 +5,10 @@
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="../js/SVG.js"></script>
     <script type="text/javascript" src="../js/victor.min.js"></script>
+    <script type="text/javascript" src="../js/viewport.js"></script>
     <script type="text/javascript" src="../js/mock-api.js"></script>
     <script type="text/javascript" src="../js/game.js"></script>
-  <script type="text/javascript" src="../js/player.js"></script>
+    <script type="text/javascript" src="../js/player.js"></script>
 <head>
   <title>SVG.js</title>
 </head>
@@ -18,5 +19,5 @@
 <script>
   let api = new MockAPI();
   let game = new Game(api);
-  setInterval(function(){ game.update(); game.draw() }, 1);
+  setInterval(function(){ game.update(); game.draw() }, 10);
 </script>

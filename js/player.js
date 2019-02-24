@@ -13,7 +13,13 @@ class Player {
         this.rect = this.canvas.rect(100, 100).move(this.posX, this.posY).attr({ fill: '#f06' })
     }
 
-    Draw() {
-        this.rect.dmove(this.dX, this.dY)
+    Update() {
+        this.posX += this.dX;
+        this.posY += this.dY;
+    }
+
+    Draw(viewport) {
+        console.log(this.posX);
+        this.rect.move(this.posX+viewport.posX, this.posY+viewport.posY)
     }
 }

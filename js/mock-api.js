@@ -5,10 +5,10 @@ class MockAPI {
                 name: "Player_1",
                 id: "21321"
             },
-            {
-                name: "Player_2",
-                id: "bdqwdqw"
-            },
+            // {
+            //     name: "Player_2",
+            //     id: "bdqwdqw"
+            // },
         ]
     }
 
