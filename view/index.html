@@ -1,0 +1,22 @@
+<html>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/SVG.js"></script>
+    <script type="text/javascript" src="../js/victor.min.js"></script>
+    <script type="text/javascript" src="../js/mock-api.js"></script>
+    <script type="text/javascript" src="../js/game.js"></script>
+  <script type="text/javascript" src="../js/player.js"></script>
+<head>
+  <title>SVG.js</title>
+</head>
+<body>
+  <div id="drawing"></div>
+</body>
+</html>
+<script>
+  let api = new MockAPI();
+  let game = new Game(api);
+  setInterval(function(){ game.update(); game.draw() }, 1);
+</script>
