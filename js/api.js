@@ -25,6 +25,8 @@ class API {
     }
 
     updatePlayers(data) {
+        this.players = [];
+
         for(var i = 0; i < data.length; i++) {
             let p = data[i]
             this.players.push({
