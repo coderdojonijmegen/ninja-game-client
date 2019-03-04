@@ -25,9 +25,6 @@ class API {
     }
 
     updatePlayers(data) {
-        console.log(data);
-        this.abc = data;
-        console.log(data.length)
         for(var i = 0; i < data.length; i++) {
             let p = data[i]
             this.players.push({
@@ -37,7 +34,6 @@ class API {
                 name: p.name
             })
         }
-        console.log("updates")
     }
 
     updateTagger(data) {
@@ -45,6 +41,7 @@ class API {
     }
 
     fetchPlayers() {
+        //This is temporary
         this.socket.emit('move_left')
 
         return this.players;
