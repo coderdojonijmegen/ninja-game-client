@@ -2,7 +2,7 @@ class API {
 
     constructor(canvas_) {
         this.canvas = canvas_;
-        this.socket = io("ws://localhost:3000")
+        this.socket = io("ws://45.77.139.8:3000")
 
         this.socket.on('connection', function (socket) {
             console.log("Connnnnnnected")
@@ -31,8 +31,8 @@ class API {
             let p = data[i]
             this.players.push({
                 id: p.id,
-                posX: p.position.x/10,
-                posY: p.position.y/10,
+                posX: p.position.x/7,
+                posY: p.position.y/7,
                 name: p.name
             })
         }
@@ -44,7 +44,7 @@ class API {
 
     fetchPlayers() {
         //This is temporary
-        this.socket.emit('move_left')
+        this.socket.emit('move_right')
 
         return this.players;
     }

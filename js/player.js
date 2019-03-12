@@ -20,6 +20,6 @@ class Player {
 
     Draw(viewport) {
         console.log(this.posX);
-        this.rect.move(this.posX+viewport.posX, this.posY+viewport.posY)
+        this.rect.move(this.posX, this.posY)
     }
 }

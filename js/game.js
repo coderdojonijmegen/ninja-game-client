@@ -5,7 +5,7 @@ class Game {
         this.width = $(window).width();
         this.height = $(window).height();
 
-        this.canvas = SVG('drawing').size($(window).width(), $(window).height())
+        this.canvas = SVG('drawing').size($(window).width(), $(window).height()-200)
 
         this.players = [
             new Player("21321", this.canvas, 10, 10, "Player_1"),
@@ -23,6 +23,7 @@ class Game {
     }
 
     update() {
+        console.log("Updating")
         let newPlayers = this.api.fetchPlayers();
 
         newPlayers.forEach(player => {
