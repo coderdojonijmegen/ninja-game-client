@@ -23,7 +23,7 @@ class Game {
     }
 
     update() {
-        console.log("Updating")
+     //   console.log("Updating")
         let newPlayers = this.api.fetchPlayers();
 
         newPlayers.forEach(player => {

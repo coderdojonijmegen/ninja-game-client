@@ -19,7 +19,7 @@ class Player {
     }
 
     Draw(viewport) {
-        console.log(this.posX);
+     //   console.log(this.posX);
         this.rect.move(this.posX, this.posY)
     }
 }
