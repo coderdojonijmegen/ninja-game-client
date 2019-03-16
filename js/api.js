@@ -27,10 +27,12 @@ class API {
 
         $("#right").click(function () {
             self.socket.emit('move_right')
+            console.log("right")
         })
 
         $("#left").click(function () {
             self.socket.emit('move_left')
+            console.log("left")
         })
 
         $("#up").click(function () {
@@ -49,10 +51,12 @@ class API {
 
         for (var i = 0; i < data.length; i++) {
             let p = data[i]
+            console.log(p.position.x);
+
             this.players.push({
                 id: p.id,
-                posX: p.position.x / 7,
-                posY: p.position.y / 7,
+                posX: p.position.x,
+                posY: p.position.y,
                 name: p.name
             })
         }

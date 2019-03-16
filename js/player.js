@@ -3,8 +3,8 @@ class Player {
         this.canvas = canvas_;
         this.id = id_;
         
-        this.posX = posX_;
-        this.posY = posY_;
+        this.posX = 0;
+        this.posY = 0;
 
         this.dX = 0;
         this.dY = 0;
@@ -13,13 +13,12 @@ class Player {
         this.rect = this.canvas.rect(100, 100).move(this.posX, this.posY).attr({ fill: '#f06' })
     }
 
-    Update() {
-        this.posX += this.dX;
-        this.posY += this.dY;
+    Update(data) {
+
     }
 
     Draw(viewport) {
-     //   console.log(this.posX);
+        console.log(this.posY);
         this.rect.move(this.posX, this.posY)
     }
 }

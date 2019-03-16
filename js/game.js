@@ -31,8 +31,12 @@ class Game {
                 return p.id == player.id;
             })
             if (current_player != null) {
-                current_player.posX = player.posX
-                current_player.dY = 0
+                var newX = (player.posX-0)/(5000-player.posX) * (0-500) + 500
+                var newY = (player.posY-0)/(5000-player.posY) * (0-500) + 500
+
+                current_player.posX = newX
+                current_player.posY = newY
+
             } else {
                 this.players.push(new Player(
                     player.id,
