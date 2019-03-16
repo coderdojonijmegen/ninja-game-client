@@ -24,4 +24,4 @@ als er nieuwe informatie is.
 Elke keer als er een verandering plaatsvind verstuurt de server een update. Elke keer als dit gebeurt wordt de interne lijst van spelers
 bijgewerkt. Deze code is allemaal te vinden in de API klasse. 
 
-![Plaatje](https://imgur.com/a/GPqKBsG)
+#[Plaatje](https://imgur.com/a/GPqKBsG.png)
