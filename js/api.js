@@ -25,21 +25,25 @@ class API {
             $("#name").text("Username: "+data)
          })
 
-        $("#right").click(function () {
+        self.socket.emit('set_styles', {
+            "width": "500px",
+        })
+
+        $("#left").click(function () {
             self.socket.emit('move_right')
             console.log("right")
         })
 
-        $("#left").click(function () {
+        $("#right").click(function () {
             self.socket.emit('move_left')
             console.log("left")
         })
 
-        $("#up").click(function () {
+        $("#down").click(function () {
             self.socket.emit('move_up')
         })
 
-        $("#down").click(function () {
+        $("#up").click(function () {
             self.socket.emit('move_down')
         })
         // this.socket.on('input_error', function(data) { _this.showInputError(data) })
@@ -57,7 +61,8 @@ class API {
                 id: p.id,
                 posX: p.position.x,
                 posY: p.position.y,
-                name: p.name
+                name: p.name,
+                styles: p.styles
             })
         }
     }
