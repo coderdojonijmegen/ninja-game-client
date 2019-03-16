@@ -25,19 +25,25 @@ class API {
             $("#name").text("Username: "+data)
          })
 
-        $("#right").click(function () {
-            self.socket.emit('move_right')
+        self.socket.emit('set_styles', {
+            "width": "500px",
         })
 
         $("#left").click(function () {
-            self.socket.emit('move_left')
+            self.socket.emit('move_right')
+            console.log("right")
         })
 
-        $("#up").click(function () {
-            self.socket.emit('move_up')
+        $("#right").click(function () {
+            self.socket.emit('move_left')
+            console.log("left")
         })
 
         $("#down").click(function () {
+            self.socket.emit('move_up')
+        })
+
+        $("#up").click(function () {
             self.socket.emit('move_down')
         })
         // this.socket.on('input_error', function(data) { _this.showInputError(data) })
@@ -49,11 +55,14 @@ class API {
 
         for (var i = 0; i < data.length; i++) {
             let p = data[i]
+            console.log(p.position.x);
+
             this.players.push({
                 id: p.id,
-                posX: p.position.x / 7,
-                posY: p.position.y / 7,
-                name: p.name
+                posX: p.position.x,
+                posY: p.position.y,
+                name: p.name,
+                styles: p.styles
             })
         }
     }
