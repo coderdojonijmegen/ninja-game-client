@@ -1,6 +1,8 @@
 # ninja-game-client
 Client voor de ninja game server
 
+#### [Klik hier voor het klasse diagram](https://i.imgur.com/sjRKtw0.png)
+
 Hieronder een korte uitleg over de flow van de applicatie.
 
 Het opstarten gebeurt momenteel in de index.html, deze set een interval die de Update functie in de Game klasse aanroept.
@@ -24,4 +26,3 @@ als er nieuwe informatie is.
 Elke keer als er een verandering plaatsvind verstuurt de server een update. Elke keer als dit gebeurt wordt de interne lijst van spelers
 bijgewerkt. Deze code is allemaal te vinden in de API klasse. 
 
-#[Plaatje](https://imgur.com/a/GPqKBsG.png)
