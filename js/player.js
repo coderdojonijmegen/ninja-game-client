@@ -10,7 +10,7 @@ class Player {
 
         this.name = name_;
 
-        //Add player into the HTML
+        //Add player into the 'drawing DIV'
         $("#drawing").append("<div id='"+this.id+"' class='player'><div>")
     }
 
@@ -27,7 +27,6 @@ class Player {
         //Map coordinates to screenspace based on viewport size
         var newX = ((this.posX-0)/(5000-this.posX) * (0-viewport.width) + viewport.width) + viewport.posX
         var newY = ((this.posY-0)/(5000-this.posY) * (0-viewport.height) + viewport.height) + viewport.posY
-
 
         //Update location
         $("#"+this.id).css('left', newX);
