@@ -6,19 +6,13 @@ class Game {
         this.height = $(window).height();
 
         this.players = [
-            new Player("21321", 10, 10, "Player_1"),
-            //   new Player("bdqwdqw", this.canvas, 200, 10, "Player_2"),
+            new Player("21321", 10, 10, "Player_1"), //Add test player
         ]
 
         this.viewport = new Viewport(5000, 5000, 0, 0);
     }
 
-    draw() {
-        this.players.forEach(player => {
-            player.Draw(this.viewport);
-        });
-    }
-
+    //Update existing players, and add new players.
     update() {
         let newPlayers = this.api.fetchPlayers();
         newPlayers.forEach(player => {
@@ -26,9 +20,7 @@ class Game {
                 return p.id == player.id;
             })
             if (current_player != null) {
-
-                current_player.Update(player)
-
+                current_player.Update(player, this.viewport)
             } else {
                 this.players.push(new Player(
                     player.id,
@@ -38,8 +30,5 @@ class Game {
                 ))
             }
         });
-
-
-
     }
 }

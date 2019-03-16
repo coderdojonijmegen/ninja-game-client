@@ -14,21 +14,23 @@ class API {
 
         ]
 
-        // this.socket.on('get_name', function(data) { _this.setName(data) })
-        // this.socket.on('tag', function(data) { _this.showTaggerText(data) })
-        var self = this;
+        var self = this; //For working first first class functions
+
+        //Asynchronously update player information
         this.socket.on('get_players', (data) => {
             self.updatePlayers(data)
         })
 
-        this.socket.on('get_name', function (data) { 
-            $("#name").text("Username: "+data)
-         })
+        this.socket.on('get_name', function (data) {
+            $("#name").text("Username: " + data)
+        })
 
+        //Enable test styling
         self.socket.emit('set_styles', {
             "width": "500px",
         })
 
+        //* Temporary way of listening for controls */
         $("#left").click(function () {
             self.socket.emit('move_right')
             console.log("right")
@@ -46,17 +48,14 @@ class API {
         $("#up").click(function () {
             self.socket.emit('move_down')
         })
-        // this.socket.on('input_error', function(data) { _this.showInputError(data) })
-        // this.socket.on('tagger_monitor', function(data) { _this.showMonitor(data) })    
     }
 
+
+    //Asynchronously update player information
     updatePlayers(data) {
         this.players = [];
-
         for (var i = 0; i < data.length; i++) {
             let p = data[i]
-            console.log(p.position.x);
-
             this.players.push({
                 id: p.id,
                 posX: p.position.x,
@@ -71,10 +70,8 @@ class API {
         // this.players = data;
     }
 
+    //Simply returns the list of all players with up to date information.
     fetchPlayers() {
-        //This is temporary
-        //   /  this.socket.emit('move_right')
-
         return this.players;
     }
 }
