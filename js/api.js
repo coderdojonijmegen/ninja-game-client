@@ -26,9 +26,11 @@ class API {
         })
 
         //Enable test styling
-        self.socket.emit('set_styles', {
-            "width": "500px",
-        })
+        let styles = {
+            "width": "500",
+        }
+
+        this.socket.emit('set_styles', styles)
 
         //* Temporary way of listening for controls */
         $("#left").click(function () {

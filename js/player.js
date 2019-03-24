@@ -22,7 +22,10 @@ class Player {
         let self = this
 
         //Update styling
-        $("#"+self.id).css(data.styles);
+        // $("#"+self.id).css(data.styles);
+        // data.styles.forEach(element => {
+        //     $("#"+self.id).css("width", "400");
+        // });
         
         //Map coordinates to screenspace based on viewport size
         var newX = ((this.posX-0)/(5000-this.posX) * (0-viewport.width) + viewport.width) + viewport.posX
