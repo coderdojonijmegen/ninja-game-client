@@ -27,7 +27,9 @@ class API {
 
         //Enable test styling
         let styles = {
-            "width": "500",
+            "background-color": "black",
+            "border-radius": "20px", 
+            "width": "20px" 
         }
 
         this.socket.emit('set_styles', styles)
@@ -62,6 +64,8 @@ class API {
                 id: p.id,
                 posX: p.position.x,
                 posY: p.position.y,
+                width: p.position.width,
+                height: p.position.height,
                 name: p.name,
                 styles: p.styles
             })

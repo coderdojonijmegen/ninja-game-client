@@ -27,6 +27,15 @@ class Player {
         //     $("#"+self.id).css("width", "400");
         // });
         
+        for (var property in data.styles) {
+            if (data.styles.hasOwnProperty(property)) {
+                $("#"+self.id).css(property, data.styles[property]);
+            }
+        }
+        
+        $("#"+self.id).css("height", data.height+"px");
+        $("#"+self.id).css("width", data.width+"px");
+
         //Map coordinates to screenspace based on viewport size
         var newX = ((this.posX-0)/(5000-this.posX) * (0-viewport.width) + viewport.width) + viewport.posX
         var newY = ((this.posY-0)/(5000-this.posY) * (0-viewport.height) + viewport.height) + viewport.posY
