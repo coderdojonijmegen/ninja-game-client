@@ -20,12 +20,6 @@ class Player {
         this.posX = data.posX
         this.posY = data.posY
         let self = this
-
-        //Update styling
-        // $("#"+self.id).css(data.styles);
-        // data.styles.forEach(element => {
-        //     $("#"+self.id).css("width", "400");
-        // });
         
         for (var property in data.styles) {
             if (data.styles.hasOwnProperty(property)) {

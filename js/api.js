@@ -1,5 +1,4 @@
 class API {
-
     constructor(canvas_) {
         this.canvas = canvas_;
         this.socket = io("ws://45.77.139.8:3000")
@@ -28,8 +27,8 @@ class API {
         //Enable test styling
         let styles = {
             "background-color": "black",
-            "border-radius": "20px", 
-            "width": "20px" 
+            "border-radius": "20px",
+            "width": "20px"
         }
 
         this.socket.emit('set_styles', styles)
@@ -54,6 +53,21 @@ class API {
         })
     }
 
+    move_up() {
+        this.socket.emit('move_down')
+    }
+
+    move_left() {
+        this.socket.emit('move_right')
+    }
+
+    move_right() {
+        this.socket.emit('move_left')
+    }
+
+    move_down() {
+        this.socket.emit('move_up')
+    }
 
     //Asynchronously update player information
     updatePlayers(data) {

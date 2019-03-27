@@ -9,6 +9,7 @@
 <script type="text/javascript" src="../js/api.js"></script>
 <script type="text/javascript" src="../js/game.js"></script>
 <script type="text/javascript" src="../js/player.js"></script>
+<script type="text/javascript" src="../js/ninja-tag.js"></script>
 
 <head>
   <title>SVG.js</title>
@@ -35,5 +36,6 @@
 <script>
   let api = new API();
   let game = new Game(api);
+  let avatar = create_avatar(api);
   setInterval(function () { game.update() }, 10);
 </script>
