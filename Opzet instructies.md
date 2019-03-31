@@ -12,9 +12,8 @@ Basis
 Gevorderden
 -----------
 - [ ] Functie schrijven en aanroepen
-- [ ] Knoppen maken
+- [ ] Keyboard events
 
 Experts
 -------
-- [ ] Keyboard events
 - [ ] Loopje schrijven
