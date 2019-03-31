@@ -8,17 +8,26 @@
 <body>
     <h1>Ninja Tag</h1>
     <p>Welkom bij Ninja Tag. Om te beginnen, open de index.html file in je chrome browser. Je ziet al dat je direct mee doet aan het spel! Als je in chrome op alt-ctrl-J drukt (of op macs op alt-cmd-J), dan wordt de javascript console geopend. Nu kun je aan de slag.</p>
-    <h2>Naam instellen</h2>
+    <h2>Begin</h2>
+    <h3>Avatar</h3>
+    <p>In het spel bestuur je een 'avatar'. Je avatar is een vierkantje met een kleur of een plaatje, dat kan bewegen over het veld. Je bestuurt je avatar door commando's te typen in de console. Die commando's gaan we zo vertellen, maar je kan alvast wat informatie over je avatar zien door het woord in de console te typen:</p>
+    <code><span style="color:blue">&gt;</span> avatar</code>
+    <p>Druk daarna op enter en dan komt er informatie in beeld. Weet jij wat het allemaal betekent?</p>
+    <h3>Naam instellen</h3>
     <p>Stel een naam in met de onderstaande commando, in het voorbeeld heet de speler Jantje.</p>
     <code><span style="color:blue">&gt;</span> avatar.zet_naam(<span style="color:darkred">"Jantje"</span>)</code>
-    <h2>Bewegen</h2>
+    <p>Met deze commando heb je een bericht naar de server gestuurd dat je je naam wilt veranderen. Als de server je bericht begrepen heeft, zal het laten weten dat je naam is veranderd. Het kan zijn dat er meer spelers die naam gebruiken, dus dan zal er een getal achter je naam komen te staan. Om te zien of je naam is veranderd en waarin het is veranderd, type je:</p>
+    <code><span style="color:blue">&gt;</span> avatar.naam</code>
+    <h3>Bewegen</h3>
     <p>Beweeg je avatar met bijvoorbeeld deze commando:</p>
     <code><span style="color:blue">&gt;</span> avatar.ga_rechts()</code>
     <p>Je bent nu naar rechts bewogen. Je kunt ook naar links, naar boven en naar onder. Kun jij ontdekken hoe?</p>
-    <h2>Er anders uit zien</h2>
-    <p>Je kunt zorgen dat jouw avatar er anders uit ziet.</p>
+    <h3>Grootte veranderen</h3>
+    <p>Je kan zelf veranderen hoe je avatar er uit ziet, bijvoorbeeld door het groter of kleiner te maken. Daarvoor heeft de avatar zogenaamde 'styles'. De namen zijn in het Engels: breedte is 'width', hoogte is 'height'. Als je de styles hebt ingesteld, stuur je ze naar de server met 'stuur_styles()'. Type bijvoorbeeld onderstaand:</p>
     <code>
-        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"background-color"</span>] = <span style="color:darkred">"green"</span><br>
+        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"width"</span>] = <span style="color:darkred">"32px"</span><br>
+        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"height"</span>] = <span style="color:darkred">"48px"</span><br>
         <span style="color:blue">&gt;</span> avatar.stuur_styles()
     </code>
+    <p>Als het goed is, heeft je avatar nu een breedte van 32 pixels (px) en een hoogte van 48 pixels. Experimenteer met verschillende groottes, let op dat er een maximum en een minimum is.</p>
 </body>
