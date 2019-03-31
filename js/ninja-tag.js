@@ -30,7 +30,7 @@ function create_avatar(api_) {
         },
         // Stuur je styles naar de server.
         stuur_styles: function stuur_styles() {
-            api.socket.emit("send_styles", this.styles)
+            api.socket.emit("set_styles", this.styles)
         }
     }
 
