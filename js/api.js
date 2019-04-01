@@ -1,5 +1,6 @@
 class API {
     constructor(canvas_) {
+        this.name = "";
         this.canvas = canvas_;
         this.socket = io("ws://45.77.139.8:3000")
 
@@ -21,7 +22,8 @@ class API {
         })
 
         this.socket.on('get_name', function (data) {
-            $("#name").text("Username: " + data)
+            $("#name").text("Gebruikersnaam: " + data)
+            self.name = data;
         })
 
         //Enable test styling
@@ -67,11 +69,26 @@ class API {
         this.socket.emit('move_down')
     }
 
+    send_styles(styles) {
+        this.socket.emit("send_styles", this.styles)
+    }
+
+    set_name(name) {
+        this.socket.emit("set_name", name)
+    }
+
     //Asynchronously update player information
     updatePlayers(data) {
         this.players = [];
         for (var i = 0; i < data.length; i++) {
             let p = data[i]
+            if(p.name == this.name) {
+                $("#color").css('background-color', p.styles["background-color"]);
+
+            }
+            if(p.tagger) {
+                $("#tagger").text("Tikker: " + p.name)
+            }
             this.players.push({
                 id: p.id,
                 posX: p.position.x,

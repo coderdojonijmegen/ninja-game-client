@@ -10,7 +10,7 @@ function create_avatar(api_) {
         },
         // Stuur je naam naar de server.
         zet_naam: function zet_naam(naam) {
-            // socket.emit("set_name", naam)
+            api.set_name(naam);
         },
         // Ga een stapje naar links.
         ga_links: function ga_links() {
@@ -30,7 +30,7 @@ function create_avatar(api_) {
         },
         // Stuur je styles naar de server.
         stuur_styles: function stuur_styles() {
-            // socket.emit("send_styles", this.styles)
+            api.send_styles(this.styles);
         }
     }
 

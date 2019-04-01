@@ -21,6 +21,14 @@ body {
     margin-left: 20px;
 }
 
+#color {
+    width: 20px;
+    height: 20px;
+    background-color: rebeccapurple;
+    float: left;
+    margin-right: 10px;
+}
+
 .header-overlay {
     position: absolute;
     top: 0;
