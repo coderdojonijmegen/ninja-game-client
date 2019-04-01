@@ -26,6 +26,16 @@ class Player {
                 $("#"+self.id).css(property, data.styles[property]);
             }
         }
+
+        if(data.tagger) {
+            $("#"+self.id).css("border", "3px solid yellow");
+        } else if($("#"+self.id).css("border") == "3px solid yellow") {
+            $("#"+self.id).css("border", "none");
+        }
+
+        if(!data.is_self) {
+            $("#"+self.id).css("z-index", "-2");
+        }
         
         $("#"+self.id).css("height", data.height+"px");
         $("#"+self.id).css("width", data.width+"px");

@@ -2,7 +2,7 @@ class API {
     constructor(canvas_) {
         this.name = "";
         this.canvas = canvas_;
-        this.socket = io("ws://45.77.139.8:3000")
+        this.socket = io("ws://"+IP_ADRESS)
 
         this.socket.on('connection', function (socket) {
             console.log("Connnnnnnected")
@@ -84,7 +84,7 @@ class API {
             let p = data[i]
             if(p.name == this.name) {
                 $("#color").css('background-color', p.styles["background-color"]);
-
+                p.is_self = true;
             }
             if(p.tagger) {
                 $("#tagger").text("Tikker: " + p.name)
@@ -96,7 +96,9 @@ class API {
                 width: p.position.width,
                 height: p.position.height,
                 name: p.name,
-                styles: p.styles
+                tagger: p.tagger,
+                styles: p.styles,
+                is_self: p.is_self
             })
         }
     }
