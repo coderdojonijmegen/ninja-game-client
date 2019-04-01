@@ -61,4 +61,11 @@
     <p>De opdrachten die tussen de '{' en de '}' staan, zijn de stapjes die jouw commando zet. Je kan dus alle opdrachten die je in de console hebt gedaan, ook in je eigen commando's zetten.<br>Als je de pagina ververst, kun je in de console nu je nieuwe commando aanroepen:</p>
     <code><span style="color:blue">&gt;</span> avatar.ga_rechtsonder()</code>
     <p>Kun je ook een commando schrijven die naar links-boven gaat? En een commando die 5 stapjes naar rechts gaat?</p>
+    <h3>Besturen met je toestenbord</h3>
+    <p>Je kunt ook functies schrijven die automatisch worden aangeroepen als er iets gebeurt. Bijvoorbeeld wanneer een toets op je toetsenbord wordt ingedrukt. Hiervoor gebruik je het 'toetsenbord' object, waarbij de naam van je functie uit &egrave;&egrave;n enkele hoofdletter bestaat. Wanneer die hoofdletter dan wordt ingedrukt, wordt je functie aangeroepen. Probeer maar eens uit door deze code in je ninja.js bestand te zetten:</p>
+    <code><pre>toetsenbord.D = function() {
+    console.log(<span style="color:darkred">"De D is ingedrukt"</span>)
+    avatar.ga_rechts()
+}</pre></code>
+    <p>Vergeet niet om daarna je pagina te verversen. Als je nu in het veld klikt en je drukt op 'D', dan zou je avatar naar rechts moeten gaan. De regel met console.log() is een programmeertrucje: het schrijft een berichtje in je console wanneer dit langs komt. Zo weet je of je functie is aangeroepen. Kun jij nu zelf zorgen dat W naar boven gaat, A naar rechts en S naar onder?</p>
 </body>

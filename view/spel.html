@@ -10,6 +10,7 @@
 <script type="text/javascript" src="../js/game.js"></script>
 <script type="text/javascript" src="../js/player.js"></script>
 <script type="text/javascript" src="../js/avatar.js"></script>
+<script type="text/javascript" src="../js/toetsenbord.js"></script>
 
 <head>
   <title>Ninja tag!</title>
@@ -41,6 +42,7 @@
   let api = new API();
   let game = new Game(api);
   let avatar = create_avatar(api);
+  let toetsenbord = new Toetsenbord();
   setInterval(function () { game.update() }, 10);
 </script>
 <script type="text/javascript" src="../js/ninja.js"></script>

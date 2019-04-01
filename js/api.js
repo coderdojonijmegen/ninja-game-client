@@ -2,7 +2,7 @@ class API {
     constructor(canvas_) {
         this.name = "";
         this.canvas = canvas_;
-        this.socket = io("ws://"+IP_ADRESS)
+        this.socket = io("ws://"+IP_ADDRESS)
 
         this.socket.on('connection', function (socket) {
             console.log("Connnnnnnected")
@@ -10,9 +10,7 @@ class API {
 
         this.data = "";
 
-        this.players = [
-
-        ]
+        this.players = []
 
         var self = this; //For working first first class functions
 
