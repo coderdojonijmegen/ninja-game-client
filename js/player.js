@@ -35,7 +35,7 @@ class Player {
         var newY = ((this.posY-0)/(5000-this.posY) * (0-viewport.height) + viewport.height) + viewport.posY
 
         //Update location
-        $("#"+this.id).css('left', newX);
-        $("#"+this.id).css('top', newY);
+        $("#"+this.id).css('left', this.posX);
+        $("#"+this.id).css('top', this.posY);
     }
 }

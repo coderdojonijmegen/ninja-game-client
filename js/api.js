@@ -35,38 +35,36 @@ class API {
 
         //* Temporary way of listening for controls */
         $("#left").click(function () {
-            self.socket.emit('move_right')
-            console.log("right")
+            self.move_left();
         })
 
         $("#right").click(function () {
-            self.socket.emit('move_left')
-            console.log("left")
+            self.move_right();
         })
 
         $("#down").click(function () {
-            self.socket.emit('move_up')
+            self.move_down();
         })
 
         $("#up").click(function () {
-            self.socket.emit('move_down')
+            self.move_up();
         })
     }
 
     move_up() {
-        this.socket.emit('move_down')
+        this.socket.emit('move_up')
     }
 
     move_left() {
-        this.socket.emit('move_right')
-    }
-
-    move_right() {
         this.socket.emit('move_left')
     }
 
+    move_right() {
+        this.socket.emit('move_right')
+    }
+
     move_down() {
-        this.socket.emit('move_up')
+        this.socket.emit('move_down')
     }
 
     //Asynchronously update player information
