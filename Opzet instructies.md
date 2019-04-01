@@ -12,5 +12,5 @@ Basis
 Gevorderden
 -----------
 - [x] Functie schrijven en aanroepen
-- [ ] Keyboard events
-- [ ] Loopje schrijven
+- [x] Keyboard events
+- [x] Loopje schrijven

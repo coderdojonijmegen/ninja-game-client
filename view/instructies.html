@@ -68,4 +68,14 @@
     avatar.ga_rechts()
 }</pre></code>
     <p>Vergeet niet om daarna je pagina te verversen. Als je nu in het veld klikt en je drukt op 'D', dan zou je avatar naar rechts moeten gaan. De regel met console.log() is een programmeertrucje: het schrijft een berichtje in je console wanneer dit langs komt. Zo weet je of je functie is aangeroepen. Kun jij nu zelf zorgen dat W naar boven gaat, A naar rechts en S naar onder?</p>
+    <h3>Loops</h3>
+    <p>Met javascript kun je een heleboel doen, veel meer dan alleen maar commando's aanroepen. Om een glimps te geven van de kracht van javascript, laten we proberen om je avatar zo snel mogelijk naar de andere kant van het veld te krijgen. Probeer deze code eens:</p>
+    <code><pre>avatar.ver_naar_rechts = function() {
+    var teller = 0;
+    while (teller < 100) {
+        avatar.ga_rechts()
+        teller = teller + 1
+    }   
+}</pre></code>
+    <p>Probeer deze functie is uit door in je console <code>avatar.ga_rechts()</code> te typen. Als het goed werkt, is je avatar nu 100 stapjes naar rechts gegaan. Misschien snap je niet alles van dit voorbeeldje, dat geeft niet. Je kan ermee experimenteren door van de 100 stapjes meer of minder te maken. Als je graag meer wilt leren over wat er allemaal mogelijk is met javascript, daar zijn hele boeken over geschreven. Vraag een mentor, die helpt je er graag mee verder!</p>
 </body>
