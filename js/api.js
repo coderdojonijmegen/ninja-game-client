@@ -2,7 +2,7 @@ class API {
     constructor(canvas_) {
         this.name = "";
         this.canvas = canvas_;
-        this.socket = io("ws://"+IP_ADRESS)
+        this.socket = io("ws://"+IP_ADDRESS)
 
         this.socket.on('connection', function (socket) {
             console.log("Connnnnnnected")
@@ -70,7 +70,7 @@ class API {
     }
 
     send_styles(styles) {
-        this.socket.emit("send_styles", this.styles)
+        this.socket.emit("send_styles", styles)
     }
 
     set_name(name) {
