@@ -67,8 +67,8 @@ class API {
         this.socket.emit('move_down')
     }
 
-    send_styles(styles) {
-        this.socket.emit("send_styles", this.styles)
+    set_styles(styles) {
+        this.socket.emit("set_styles", styles)
     }
 
     set_name(name) {
