@@ -12,6 +12,8 @@ class API {
 
         this.players = []
 
+        this.set_avatar_styles = null
+
         var self = this; //For working first first class functions
 
         //Asynchronously update player information
@@ -74,6 +76,9 @@ class API {
             if(p.name == this.name) {
                 $("#color").css('background-color', p.styles["background-color"]);
                 p.is_self = true;
+                if (this.set_avatar_styles) {
+                    this.set_avatar_styles(p.styles)
+                }
             }
             if(p.tagger) {
                 $("#tagger").text("Tikker: " + p.name)

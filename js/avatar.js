@@ -52,6 +52,10 @@ function create_avatar(api_) {
         console.error(err)
     })
 
+    api.set_avatar_styles = function(new_styles) {
+        avatar.styles = new_styles
+    }
+
     return avatar;
 }
 
