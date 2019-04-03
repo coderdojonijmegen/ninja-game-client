@@ -3,11 +3,7 @@ function create_avatar(api_) {
         naam: "",
         tikker: false,
         api: api_,
-        styles: {
-            "background-img": "img/ninja.png",
-            "width": "64px",
-            "height": "64px",
-        },
+        styles: {},
         // Stuur je naam naar de server.
         zet_naam: function zet_naam(naam) {
             api.set_name(naam);
@@ -37,7 +33,6 @@ function create_avatar(api_) {
     // Socket berichten.
     api.socket.on("connect", function connect() {
         console.info("Je bent verbonden.")
-        avatar.stuur_styles()
     })
     api.socket.on("get_name", function get_name(name) {
         avatar.naam = name

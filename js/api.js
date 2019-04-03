@@ -24,15 +24,6 @@ class API {
             self.name = data;
         })
 
-        //Enable test styling
-        let styles = {
-            "background-color": "black",
-            "border-radius": "20px",
-            "width": "20px"
-        }
-
-        this.socket.emit('set_styles', styles)
-
         //* Temporary way of listening for controls */
         $("#left").click(function () {
             self.move_left();

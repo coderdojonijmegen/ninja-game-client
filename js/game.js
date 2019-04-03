@@ -5,9 +5,7 @@ class Game {
         this.width = $(window).width();
         this.height = $(window).height();
 
-        this.players = [
-            new Player("21321", 10, 10, "Player_1"), //Add test player
-        ]
+        this.players = []
         
         //The viewport indicates how much of the current playing area the user can see. If the width is equal to the server the entire field is in view.
         //Coordinates are mapped based on this size, the viewport can be moved to view other area's of the play area. 
