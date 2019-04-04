@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Instructies voor ninja-tag spel</title>
+    <title>Instructies voor 'Ninja Tag'-spel</title>
 </head>
 </html>
 <body>
@@ -16,47 +16,47 @@
     <p>Je ziet dat je meteen al meedoet aan het spel! Als je in de browser op Alt-Ctrl-J drukt (op Apple-computers Alt-Cmd-J), dan wordt de javascript-console geopend. In dat venster kun je zelf het spel veranderen en uitbreiden.</p><p>[TODO: klein screenshot]</p>
     <h2>Console commando's (voor de beginner)</h2>
     <h3>Avatar</h3>
-    <p>In het spel bestuur je een 'avatar'. Je avatar is een vierkantje met een kleur of een plaatje, dat kan bewegen over het veld. Je bestuurt je avatar door commando's te typen in de console. Die commando's gaan we zo vertellen, maar je kan alvast wat informatie over je avatar zien door het woord in de console te typen:</p>
+    <p>In het spel bestuur je een 'avatar'. Je avatar is een vierkantje met een kleur of een plaatje dat over het veld kan bewegen.</p><p>Je bestuurt je avatar door commando's te typen in de console. Die commando's vertellen we je zo, maar je kunt alvast wat informatie over je avatar zien door het woord in de console te typen:</p><p>[TODO: erbij zeggen dat ze de '>' niet in hoeven typen?]<br />[TODO: screenshot van de console]</p>
     <code><span style="color:blue">&gt;</span> avatar</code>
-    <p>Druk daarna op enter en dan komt er informatie in beeld. Weet jij wat het allemaal betekent?</p>
+    <p>Druk daarna op je toetsenbord op de Enter-toets. Je ziet nu informatie in beeld. Snap je al een beetje wat het allemaal betekent?</p>
     <h3>Naam instellen</h3>
-    <p>Stel een naam in met de onderstaande commando, in het voorbeeld heet de speler Jantje.</p>
+    <p>Stel een naam in voor je avatar met het onderstaande commando. In ons voorbeeld heet de speler Jantje:</p>
     <code><span style="color:blue">&gt;</span> avatar.zet_naam(<span style="color:darkred">"Jantje"</span>)</code>
-    <p>Met dit commando heb je een bericht naar de server gestuurd dat je je naam wilt veranderen. Als de server je bericht begrepen heeft, zal het laten weten dat je naam is veranderd. Het kan zijn dat er meer spelers die naam gebruiken, dus dan zal er een getal achter je naam komen te staan. Om te zien of je naam is veranderd en waarin het is veranderd, type je:</p>
+    <p>Met dit commando heb je een bericht naar de server gestuurd dat je je naam wilt veranderen. Als de server je bericht begrepen heeft, zal hij laten weten dat je naam is veranderd.</p><p>Als meerdere spelers dezelfde naam gebruiken, zal er een getal achter je naam komen te staan. Om te zien of je naam is veranderd en waarin het is veranderd, type je:</p>
     <code><span style="color:blue">&gt;</span> avatar.naam</code>
     <h3>Bewegen</h3>
-    <p>Beweeg je avatar met bijvoorbeeld dit commando:</p>
+    <p>Beweeg nu je avatar met dit commando:</p>
     <code><span style="color:blue">&gt;</span> avatar.ga_rechts()</code>
     <p>Je bent nu naar rechts bewogen. Je kunt ook naar links, naar boven en naar onder. Kun jij ontdekken hoe?</p>
     <h3>Grootte veranderen</h3>
-    <p>Je kan zelf veranderen hoe je avatar er uit ziet, bijvoorbeeld door het groter of kleiner te maken. Daarvoor heeft de avatar zogenaamde 'styles'. De namen zijn in het Engels: breedte is 'width', hoogte is 'height'. Als je de styles hebt ingesteld, stuur je ze naar de server met 'stuur_styles()'. Type bijvoorbeeld onderstaand:</p>
+    <p>Je kunt veranderen hoe je avatar eruit ziet, bijvoorbeeld door hem groter of kleiner te maken. Daarvoor heeft de avatar eigenschappen die 'styles' worden genoemd. De namen zijn in het Engels: breedte is 'width', hoogte is 'height'.</p><p>Als je de styles hebt ingesteld, stuur je ze naar de server met 'stuur_styles()'. Type bijvoorbeeld onderstaande commando's:</p>
     <code>
         <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"width"</span>] = <span style="color:darkred">"32px"</span><br>
         <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"height"</span>] = <span style="color:darkred">"48px"</span><br>
         <span style="color:blue">&gt;</span> avatar.stuur_styles()
     </code>
-    <p>Als het goed is, heeft je avatar nu een breedte van 32 pixels (px) en een hoogte van 48 pixels. Experimenteer met verschillende groottes, let op dat er een maximum en een minimum is. Hoe groot kun je worden?</p>
+    <p>Als het goed is, heeft je avatar nu een breedte van 32 pixels en een hoogte van 48 pixels.<br />Experimenteer met verschillende groottes. Er is een maximum en een minimum. Hoe groot kun je worden?</p>
     <h3>Kleuren en vormen</h3>
-    <p>Met dezelfde styles is het ook mogelijk om andere aanpassingen te doen aan hoe jouw avatar er uit ziet. Verander bijvoorbeeld met onderstaande   commando's de achtergrondkleur naar groen (green), rood (red) of blauw (blue), of iets heel anders. Kijk op <a href="https://www.w3schools.com/cssref/css_colors.asp">de w3schools website</a> voor een uitgebreide lijst met verschillende kleuren.</p>
+    <p>Met dezelfde styles is het ook mogelijk om het uiterlijk van jouw avatar verder aan te passen. Verander bijvoorbeeld met onderstaande commando's de achtergrondkleur naar groen (green), rood (red) of blauw (blue), of iets heel anders. Een uitgebreide lijst met verschillende kleuren vind je op de <a href="https://www.w3schools.com/cssref/css_colors.asp" target="_blank">w3schools</a>-website.</p>
     <code>
         <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"background-color"</span>] = <span style="color:darkred">"green"</span><br>
         <span style="color:blue">&gt;</span> avatar.stuur_styles()
     </code>
-    <p>Behalve de achtergrondkleur, kun je ook een rand (border) toe voegen. Een rand heeft een dikte, in pixels, en een kleur. Een rand heeft ook een stijl, die je kan kiezen uit dit lijstje, probeer ze maar eens uit: dotted, dashed, solid, double, groove, ridge, inset, outset.</p>
+    <p>Behalve de kleur veranderen, kun je ook een rand (border) toevoegen. Een rand heeft een dikte, in pixels, en een kleur. Een rand heeft ook een stijl, die je kunt kiezen uit dit lijstje: dotted, dashed, solid, double, groove, ridge, inset, outset. Probeer ze maar eens uit!</p>
     <code>
         <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"border"</span>] = <span style="color:darkred">"2px dashed blue"</span><br>
         <span style="color:blue">&gt;</span> avatar.stuur_styles()
     </code>
-    <p>Je kunt ook de hoeken van je avatar aanpassen, door de zogenaamde 'radius' aan te passen:</p>
+    <p>Je kunt ook de hoeken van je avatar aanpassen, door de zogenaamde <i>radius</i> aan te passen:</p>
     <code>
         <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"border-radius"</span>] = <span style="color:darkred">"5px"</span><br>
         <span style="color:blue">&gt;</span> avatar.stuur_styles()
     </code>
-    <p>Lukt het jou om je radius zo te krijgen, dat jouw avatar een cirkel wordt?</p>
+    <p>Lukt het je om de radius zo te krijgen dat jouw avatar een cirkel wordt?</p>
     <h3>Een nieuw plaatje</h3>
-    <p>TODO</p>
+    <p>[TO DO: dit stukje weghalen als er alleen 'todo' in komt te staan ;-)']<br />TODO</p>
     <h2>Javascript (voor gevorderden)</h2>
-    <p><i>Als je de console opdrachten nog niet hebt gedaan, doe die dan eerst.</i></p>
+    <p><i>Als je de console-opdrachten nog niet hebt gedaan, doe die dan eerst.</i></p>
     <h3>Functions</h3>
     <p>Tot nu toe heb je in je console met &egrave;&egrave;n commando je avatar aangestuurd. Maar je kan ook je eigen commando's schrijven! Je kan bijvoorbeeld een commando schrijven die er voor zorgt dat jouw avatar schuin naar rechts-onder gaat. Om een commando te maken, schrijf je een function. Een function is een stukje code in een van de bestanden, die je vanuit de console kan aanroepen, zoals je tot nu toe ook al hebt gedaan.</p>
     <p>Om te beginnen, open met een teksteditor in het mapje 'js' het bestand 'ninja.js'. Als je niet weet wat een teksteditor is, vraag dan hulp bij een mentor.<br>Dit bestand is nog helemaal leeg, want het is de bedoeling dat je daar zelf iets in gaat schrijven. Laten we een commando schrijven voor de avatar waarmee de avatar naar rechts-onder gaat:</p>
@@ -75,7 +75,7 @@
 }</pre></code>
     <p>Vergeet niet om daarna je pagina te verversen. Als je nu in het veld klikt en je drukt op 'D', dan zou je avatar naar rechts moeten gaan. De regel met console.log() is een programmeertrucje: het schrijft een berichtje in je console wanneer dit langs komt. Zo weet je of je functie is aangeroepen. Kun jij nu zelf zorgen dat W naar boven gaat, A naar rechts en S naar onder?</p>
     <h3>Loops</h3>
-    <p>Met javascript kun je een heleboel doen, veel meer dan alleen maar commando's aanroepen. Om een glimps te geven van de kracht van javascript, laten we proberen om je avatar zo snel mogelijk naar de andere kant van het veld te krijgen. Probeer deze code eens:</p>
+    <p>Met Javascript kun je een heleboel doen, veel meer dan alleen maar commando's aanroepen. Laten we, om een eerste indruk te krijgen van de kracht van Javascript, proberen om je avatar zo snel mogelijk naar de andere kant van het veld te krijgen. Probeer deze code eens:</p>
     <code><pre>avatar.ver_naar_rechts = function() {
     var teller = 0;
     while (teller < 100) {
