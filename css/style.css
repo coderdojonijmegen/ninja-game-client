@@ -21,6 +21,10 @@ body {
     margin-left: 20px;
 }
 
+.tagger-player {
+    border: 3px solid yellow
+}
+
 #color {
     width: 20px;
     height: 20px;

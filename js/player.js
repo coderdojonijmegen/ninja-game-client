@@ -28,9 +28,8 @@ class Player {
         }
 
         if(data.tagger) {
-            $("#"+self.id).css("border", "3px solid yellow");
-        } else if($("#"+self.id).css("border") == "3px solid yellow") {
-            $("#"+self.id).css("border", "none");
+            $("div").removeClass("tagger-player");
+            $("#"+self.id).addClass("tagger-player");
         }
 
         if(!data.is_self) {
