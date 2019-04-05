@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Instructies voor 'Ninja Tag'-spel</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" type="text/css" href="css/instructions-style.css">
 </head>
@@ -15,14 +15,14 @@
 <body>
     <h1>Ninja Tag</h1>
     <p>Welkom bij Ninja Tag!</p>
+    <p>Hoe communiceert jouw computer met andere computers als jij een spelletje speelt met andere mensen? Volg de instructies hieronder om dat leren, door een eigen game-client te bouwen in een gedeelde wereld met andere ninja’s.</p>
     <h2>Voorbereiding</h2>
     <ul>
         <li>Download <a href="https://github.com/coderdojonijmegen/ninja-game-client/archive/master.zip">dit zip
                 bestand</a> en pak het uit in bijvoorbeeld je Documenten map.</li>
         <li>Ga naar de map <i>view</i> en open het bestand <i>spel.html</i> met de Google Chrome browser.</li>
     </ul>
-    <p>Je ziet dat je meteen al meedoet aan het spel! Als je in de browser op Alt-Ctrl-J drukt (op Apple-computers Alt-Cmd-J), dan wordt de javascript-console geopend. In dat venster kun je zelf het spel veranderen en uitbreiden.</p>
-    <img src="img/voorbeeld-console.png">
+    <p>Je ziet dat je meteen al meedoet aan het spel! Als je in de browser op Alt-Ctrl-J drukt (op Apple-computers Alt-Cmd-J), dan wordt de javascript-console geopend. In dat venster kun je zelf het spel veranderen en uitbreiden.</p><p>[TODO: klein screenshot]</p>
     <h2>Console commando's (voor de beginner)</h2>
     <h3>Avatar</h3>
     <p>In het spel bestuur je een 'avatar'. Je avatar is een vierkantje met een kleur of een plaatje dat over het veld
@@ -37,9 +37,9 @@
     <p>Stel een naam in voor je avatar met het onderstaande commando. In ons voorbeeld heet de speler Jantje:</p>
     <p>In Google Chrome ziet dit commando er als volgt uit.</p>
     <img src="img/voorbeeld-naam.png">
-    <pre><code> avatar.zet_naam("Jantje")</code></pre>
+    <pre><code> avatar.zet_naam(<span style="color:darkred">"Jantje"</span>)</code></pre>
     <p>Met dit commando heb je een bericht naar de server gestuurd dat je je naam wilt veranderen. Als de server je bericht begrepen heeft, zal hij laten weten dat je naam is veranderd.</p><p>Als meerdere spelers dezelfde naam gebruiken, zal er een getal achter je naam komen te staan. Om te zien of je naam is veranderd en waarin het is veranderd, type je:</p>
-    <pre><code> avatar.naam</code></pre>
+    <pre><code>avatar.naam</code></pre>
     <h3>Bewegen</h3>
     <p>Beweeg nu je avatar met dit commando:</p>
     <pre><code> avatar.ga_rechts()</code></pre>
@@ -87,22 +87,22 @@ avatar.stuur_styles()
         plaatje te gebruiken voor je avatar type je:</p>
     <pre><code>avatar.zet_plaatje("http://45.77.139.8:3000/img/ninja.png")</code></pre>
     <p>Let op dat dit soort adressen altijd eindigen op '.png' of '.jpg', als dat niet zo is, heb je misschien het
-        verkeerde adres.Het kan zijn dat je plaatje te groot of te klein is voor je avatar. Zoals je eerder met
+        verkeerde adres. </br> </br> Het kan zijn dat je plaatje te groot of te klein is voor je avatar. Zoals je eerder met
         'width' en 'height' de grootte van je avatar hebt bepaald, kun je ook de grootte van je afbeelding aan geven:
     </p>
 
-    <pre><code>avatar.styles["background-size"] = "32px"
+    <pre><code>avatar.styles[<span style="color:darkred">"background-size"</span>] = "32px" 
 avatar.stuur_styles()</code></pre>
 
     <h2>Javascript (voor gevorderden)</h2>
-    <p><i>Als je de console-opdrachten nog niet hebt gedaan, doe die dan eerst.</i></p>
+    <p><i>Als je de console-opdrachten hierboven nog niet hebt gedaan, doe die dan eerst.</i></p>
     <h3>Functions</h3>
     <p>Tot nu toe heb je in je console met &egrave;&egrave;n commando je avatar aangestuurd. Maar je kan ook je eigen
         commando's schrijven! Je kan bijvoorbeeld een commando schrijven die er voor zorgt dat jouw avatar schuin naar
         rechts-onder gaat. Om een commando te maken, schrijf je een function. Een function is een stukje code in een van
         de bestanden, die je vanuit de console kan aanroepen, zoals je tot nu toe ook al hebt gedaan.</p>
     <p>Om te beginnen, open met een teksteditor in het mapje 'js' het bestand 'ninja.js'. Als je niet weet wat een
-        teksteditor is, vraag dan hulp bij een mentor.Dit bestand is nog helemaal leeg, want het is de bedoeling dat
+        teksteditor is, vraag dan hulp bij een mentor. </br> </br>Dit bestand is nog helemaal leeg, want het is de bedoeling dat
         je daar zelf iets in gaat schrijven. Laten we een commando schrijven voor de avatar waarmee de avatar naar
         rechts-onder gaat:</p>
     <pre><code>avatar.ga_rechtsonder = function() {
@@ -124,9 +124,9 @@ avatar.stuur_styles()</code></pre>
     avatar.ga_rechts()
 }</code></pre>
     <p>Vergeet niet om daarna je pagina te verversen. Als je nu in het veld klikt en je drukt op 'D', dan zou je avatar
-        naar rechts moeten gaan. De regel met console.log() is een programmeertrucje: het schrijft een berichtje in je
-        console wanneer dit langs komt. Zo weet je of je functie is aangeroepen. Kun jij nu zelf zorgen dat W naar boven
-        gaat, A naar rechts en S naar onder? Kun je ook zorgen dat met bepaalde letters je avatar (en het plaatje)
+        naar rechts moeten gaan. </br></br> De regel met console.log() is een programmeertrucje: het schrijft een berichtje in je
+        console wanneer dit langs komt. Zo weet je of je functie is aangeroepen. </br> </br> Kun jij nu zelf zorgen dat W naar boven
+        gaat, A naar rechts en S naar onder? </br> Kun je ook zorgen dat met bepaalde letters je avatar (en het plaatje)
         groter of kleiner wordt?</p>
     <h3>Loops</h3>
     <p>Met Javascript kun je een heleboel doen, veel meer dan alleen maar commando's aanroepen. Laten we, om een eerste
