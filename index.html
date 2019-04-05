@@ -10,7 +10,7 @@
     <p>Welkom bij Ninja Tag!</p>
     <h2>Voorbereiding</h2>
     <ul>
-        <li>Download <a href="https://github.com/coderdojonijmegen/ninja-game-client/archive/master.zip">dit zip bestand</a> en pak het uit in bijvoorbeeld je Documeten map.</li>
+        <li>Download <a href="https://github.com/coderdojonijmegen/ninja-game-client/archive/master.zip">dit zip bestand</a> en pak het uit in bijvoorbeeld je Documenten map.</li>
         <li>Ga naar de map <i>view</i> en open het bestand <i>spel.html</i> met de Google Chrome browser.</li>
     </ul>
     <p>Je ziet dat je meteen al meedoet aan het spel! Als je in de browser op Alt-Ctrl-J drukt (op Apple-computers Alt-Cmd-J), dan wordt de javascript-console geopend. In dat venster kun je zelf het spel veranderen en uitbreiden.</p><p>[TODO: klein screenshot]</p>
@@ -47,6 +47,11 @@
         <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"border"</span>] = <span style="color:darkred">"2px dashed blue"</span><br>
         <span style="color:blue">&gt;</span> avatar.stuur_styles()
     </code>
+    <p>Om je rand weer weg te halen type je:</p>
+    <code>
+        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"border"</span>] = <span style="color:darkred">"none"</span><br>
+        <span style="color:blue">&gt;</span> avatar.stuur_styles()
+    </code>
     <p>Je kunt ook de hoeken van je avatar aanpassen, door de zogenaamde <i>radius</i> aan te passen:</p>
     <code>
         <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"border-radius"</span>] = <span style="color:darkred">"5px"</span><br>
@@ -54,7 +59,13 @@
     </code>
     <p>Lukt het je om de radius zo te krijgen dat jouw avatar een cirkel wordt?</p>
     <h3>Een nieuw plaatje</h3>
-    <p>[TO DO: dit stukje weghalen als er alleen 'todo' in komt te staan ;-)']<br />TODO</p>
+    <p>Je kunt ook als achtergrond een plaatje nemen. Eerst moet je het web adres weten van een leuke afbeelding, bijvoorbeeld <a href="http://45.77.139.8:3000/img/ninja.png">"http://45.77.139.8:3000/img/ninja.png"</a>. Om dit plaatje te gebruiken voor je avatar type je:</p>
+    <code><span style="color:blue">&gt;</span> avatar.zet_plaatje(<span style="color:darkred">"http://45.77.139.8:3000/img/ninja.png")</span></code>
+    <p>Let op dat dit soort adressen altijd eindigen op '.png' of '.jpg', als dat niet zo is, heb je misschien het verkeerde adres.<br>Het kan zijn dat je plaatje te groot of te klein is voor je avatar. Zoals je eerder met 'width' en 'height' de grootte van je avatar hebt bepaald, kun je ook de grootte van je afbeelding aan geven:</p>
+    <code>
+        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"background-size"</span>] = <span style="color:darkred">"32px"</span><br>
+        <span style="color:blue">&gt;</span> avatar.stuur_styles()
+    </code>
     <h2>Javascript (voor gevorderden)</h2>
     <p><i>Als je de console-opdrachten nog niet hebt gedaan, doe die dan eerst.</i></p>
     <h3>Functions</h3>
