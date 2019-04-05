@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Instructies voor 'Ninja Tag'-spel</title>
+    <link rel="stylesheet" type="text/css" href="css/instructions-style.css">
 </head>
 </html>
 <body>
@@ -13,7 +14,8 @@
         <li>Download <a href="https://github.com/coderdojonijmegen/ninja-game-client/archive/master.zip">dit zip bestand</a> en pak het uit in bijvoorbeeld je Documenten map.</li>
         <li>Ga naar de map <i>view</i> en open het bestand <i>spel.html</i> met de Google Chrome browser.</li>
     </ul>
-    <p>Je ziet dat je meteen al meedoet aan het spel! Als je in de browser op Alt-Ctrl-J drukt (op Apple-computers Alt-Cmd-J), dan wordt de javascript-console geopend. In dat venster kun je zelf het spel veranderen en uitbreiden.</p><p>[TODO: klein screenshot]</p>
+    <p>Je ziet dat je meteen al meedoet aan het spel! Als je in de browser op Alt-Ctrl-J drukt (op Apple-computers Alt-Cmd-J), dan wordt de javascript-console geopend. In dat venster kun je zelf het spel veranderen en uitbreiden.</p>
+    <img src="img/voorbeeld-console.png">
     <h2>Console commando's (voor de beginner)</h2>
     <h3>Avatar</h3>
     <p>In het spel bestuur je een 'avatar'. Je avatar is een vierkantje met een kleur of een plaatje dat over het veld kan bewegen.</p><p>Je bestuurt je avatar door commando's te typen in de console. Die commando's vertellen we je zo, maar je kunt alvast wat informatie over je avatar zien door het woord in de console te typen:</p><p>[TODO: erbij zeggen dat ze de '>' niet in hoeven typen?]<br />[TODO: screenshot van de console]</p>
@@ -22,7 +24,7 @@
     <h3>Naam instellen</h3>
     <p>Stel een naam in voor je avatar met het onderstaande commando. In ons voorbeeld heet de speler Jantje:</p>
     <p>In Google Chrome ziet dit commando er als volgt uit.</p>
-    <img src="../img/voorbeeld.PNG">
+    <img src="img/voorbeeld-naam.png">
     <code><span style="color:blue">&gt;</span> avatar.zet_naam(<span style="color:darkred">"Jantje"</span>)</code>
     <p>Met dit commando heb je een bericht naar de server gestuurd dat je je naam wilt veranderen. Als de server je bericht begrepen heeft, zal hij laten weten dat je naam is veranderd.</p><p>Als meerdere spelers dezelfde naam gebruiken, zal er een getal achter je naam komen te staan. Om te zien of je naam is veranderd en waarin het is veranderd, type je:</p>
     <code><span style="color:blue">&gt;</span> avatar.naam</code>
