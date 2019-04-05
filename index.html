@@ -3,19 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>Instructies voor 'Ninja Tag'-spel</title>
-    <link rel="stylesheet" type="text/css" href="css/instructions-style.css">
 </head>
 </html>
 <body>
     <h1>Ninja Tag</h1>
     <p>Welkom bij Ninja Tag!</p>
+    <p>Hoe communiceert jouw computer met andere computers als jij een spelletje speelt met andere mensen? Volg de instructies hieronder om dat leren, door een eigen game-client te bouwen in een gedeelde wereld met andere ninja’s.</p>
     <h2>Voorbereiding</h2>
     <ul>
         <li>Download <a href="https://github.com/coderdojonijmegen/ninja-game-client/archive/master.zip">dit zip bestand</a> en pak het uit in bijvoorbeeld je Documenten map.</li>
         <li>Ga naar de map <i>view</i> en open het bestand <i>spel.html</i> met de Google Chrome browser.</li>
     </ul>
-    <p>Je ziet dat je meteen al meedoet aan het spel! Als je in de browser op Alt-Ctrl-J drukt (op Apple-computers Alt-Cmd-J), dan wordt de javascript-console geopend. In dat venster kun je zelf het spel veranderen en uitbreiden.</p>
-    <img src="img/voorbeeld-console.png">
+    <p>Je ziet dat je meteen al meedoet aan het spel! Als je in de browser op Alt-Ctrl-J drukt (op Apple-computers Alt-Cmd-J), dan wordt de javascript-console geopend. In dat venster kun je zelf het spel veranderen en uitbreiden.</p><p>[TODO: klein screenshot]</p>
     <h2>Console commando's (voor de beginner)</h2>
     <h3>Avatar</h3>
     <p>In het spel bestuur je een 'avatar'. Je avatar is een vierkantje met een kleur of een plaatje dat over het veld kan bewegen.</p><p>Je bestuurt je avatar door commando's te typen in de console. Die commando's vertellen we je zo, maar je kunt alvast wat informatie over je avatar zien door het woord in de console te typen:</p><p>[TODO: erbij zeggen dat ze de '>' niet in hoeven typen?]<br />[TODO: screenshot van de console]</p>
@@ -23,8 +22,6 @@
     <p>Druk daarna op je toetsenbord op de Enter-toets. Je ziet nu informatie in beeld. Snap je al een beetje wat het allemaal betekent?</p>
     <h3>Naam instellen</h3>
     <p>Stel een naam in voor je avatar met het onderstaande commando. In ons voorbeeld heet de speler Jantje:</p>
-    <p>In Google Chrome ziet dit commando er als volgt uit.</p>
-    <img src="img/voorbeeld-naam.png">
     <code><span style="color:blue">&gt;</span> avatar.zet_naam(<span style="color:darkred">"Jantje"</span>)</code>
     <p>Met dit commando heb je een bericht naar de server gestuurd dat je je naam wilt veranderen. Als de server je bericht begrepen heeft, zal hij laten weten dat je naam is veranderd.</p><p>Als meerdere spelers dezelfde naam gebruiken, zal er een getal achter je naam komen te staan. Om te zien of je naam is veranderd en waarin het is veranderd, type je:</p>
     <code><span style="color:blue">&gt;</span> avatar.naam</code>
@@ -63,34 +60,40 @@
     </code>
     <p>Lukt het je om de radius zo te krijgen dat jouw avatar een cirkel wordt?</p>
     <h3>Een nieuw plaatje</h3>
-    <p>Je kunt ook als achtergrond een plaatje nemen. Eerst moet je het web adres weten van een leuke afbeelding, bijvoorbeeld <a href="http://45.77.139.8:3000/img/ninja.png">"http://45.77.139.8:3000/img/ninja.png"</a>. Om dit plaatje te gebruiken voor je avatar type je:</p>
+    <p>Je kunt ook een plaatje gebruiken als achtergrond. Je kunt op internet <a href="https://www.google.com/search?q=avatar&tbm=isch&source=lnt&tbs=isz:i&sa=X&ved=0ahUKEwjY7pv4p7nhAhWN16QKHYpNCDsQpwUIIA&biw=664&bih=681&dpr=1">een leuke afbeelding opzoeken</a>. Om het te kunnen gebruiken, moet je het web-adres weten. Dat adres ziet er bijvoorbeeld zo uit: "<a href="http://45.77.139.8:3000/img/ninja.png">http://45.77.139.8:3000/img/ninja.png</a>". Om dit plaatje te gebruiken voor je avatar, type je:</p>
     <code><span style="color:blue">&gt;</span> avatar.zet_plaatje(<span style="color:darkred">"http://45.77.139.8:3000/img/ninja.png")</span></code>
-    <p>Let op dat dit soort adressen altijd eindigen op '.png' of '.jpg', als dat niet zo is, heb je misschien het verkeerde adres.<br>Het kan zijn dat je plaatje te groot of te klein is voor je avatar. Zoals je eerder met 'width' en 'height' de grootte van je avatar hebt bepaald, kun je ook de grootte van je afbeelding aan geven:</p>
+    <p>Let op dat dit soort adressen altijd eindigen op '.png' of '.jpg'. Als dat niet zo is, heb je misschien het verkeerde adres.</p><p>Het kan zijn dat je plaatje te groot of te klein is voor je avatar. Zoals je eerder met 'width' en 'height' de grootte van je avatar hebt bepaald, kun je ook de grootte van je afbeelding aangeven:</p>
     <code>
         <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"background-size"</span>] = <span style="color:darkred">"32px"</span><br>
         <span style="color:blue">&gt;</span> avatar.stuur_styles()
     </code>
+
+    <p>&nbsp;</p>
+
     <h2>Javascript (voor gevorderden)</h2>
-    <p><i>Als je de console-opdrachten nog niet hebt gedaan, doe die dan eerst.</i></p>
+    <p><i>Als je de console-opdrachten hierboven nog niet hebt gedaan, doe die dan eerst.</i></p>
     <h3>Functions</h3>
-    <p>Tot nu toe heb je in je console met &egrave;&egrave;n commando je avatar aangestuurd. Maar je kan ook je eigen commando's schrijven! Je kan bijvoorbeeld een commando schrijven die er voor zorgt dat jouw avatar schuin naar rechts-onder gaat. Om een commando te maken, schrijf je een function. Een function is een stukje code in een van de bestanden, die je vanuit de console kan aanroepen, zoals je tot nu toe ook al hebt gedaan.</p>
-    <p>Om te beginnen, open met een teksteditor in het mapje 'js' het bestand 'ninja.js'. Als je niet weet wat een teksteditor is, vraag dan hulp bij een mentor.<br>Dit bestand is nog helemaal leeg, want het is de bedoeling dat je daar zelf iets in gaat schrijven. Laten we een commando schrijven voor de avatar waarmee de avatar naar rechts-onder gaat:</p>
+    <p>Tot nu toe heb je in je console met &eacute;&eacute;n commando je avatar aangestuurd. Maar je kunt ook je eigen commando's schrijven! Je kunt bijvoorbeeld een commando schrijven dat er voor zorgt dat jouw avatar schuin naar rechts-onder gaat. Om zo'n commando te maken, schrijf je een <i>function</i>. Een function is een stukje code in een van de bestanden, die je vanuit de console kan aanroepen, zoals je tot nu toe ook al hebt gedaan.</p>
+    <p>Om te beginnen, open je met een teksteditor in het mapje 'js' het bestand 'ninja.js'. (Als je niet weet wat een teksteditor is, vraag dan hulp bij een mentor.)</p><p>Dit bestand is nog helemaal leeg, want het is de bedoeling dat je daar zelf iets in gaat schrijven. Laten we een commando schrijven voor de avatar waarmee de avatar naar rechts-onder gaat:</p>
     <code><pre>avatar.ga_rechtsonder = function() {
     avatar.ga_rechts()
     avatar.ga_onder()
 }</pre></code>
-    <p>De opdrachten die tussen de '{' en de '}' staan, zijn de stapjes die jouw commando zet. Je kan dus alle opdrachten die je in de console hebt gedaan, ook in je eigen commando's zetten.<br>Als je de pagina ververst, kun je in de console nu je nieuwe commando aanroepen:</p>
+    <p>De opdrachten die tussen de '{' en de '}' staan, zijn de stapjes die jouw commando zet. Je kan dus alle opdrachten die je in de console hebt gedaan, ook in je eigen commando's zetten.<br>Als je in de browser de pagina ververst, kun je nu in de console je nieuwe commando aanroepen:</p>
     <code><span style="color:blue">&gt;</span> avatar.ga_rechtsonder()</code>
-    <p>Kun je ook een commando schrijven die naar links-boven gaat? En een commando die 5 stapjes naar rechts gaat?</p>
-    <h3>Besturen met je toestenbord</h3>
-    <p>Je kunt ook functies schrijven die automatisch worden aangeroepen als er iets gebeurt. Bijvoorbeeld wanneer een toets op je toetsenbord wordt ingedrukt. Hiervoor gebruik je het 'toetsenbord' object, waarbij de naam van je functie uit &egrave;&egrave;n enkele hoofdletter bestaat. Wanneer die hoofdletter dan wordt ingedrukt, wordt je functie aangeroepen. Probeer maar eens uit door deze code in je ninja.js bestand te zetten:</p>
+    <p>Kun je ook een commando schrijven waardoor je avatar naar linksboven gaat? En een commando zodat hij 5 stapjes naar rechts gaat?</p>
+    <h3>Besturen met je toetsenbord</h3>
+    <p>Je kunt ook functies schrijven die automatisch worden aangeroepen als er iets gebeurt. Bijvoorbeeld wanneer een toets op je toetsenbord wordt ingedrukt. Hiervoor gebruik je het 'toetsenbord'-object, waarbij de naam van je functie uit &eacute;&eacute;n enkele hoofdletter bestaat. Wanneer die hoofdletter dan wordt ingedrukt, wordt je functie aangeroepen. Probeer het maar eens uit door deze code in je ninja.js-bestand te zetten:</p>
     <code><pre>toetsenbord.D = function() {
     console.log(<span style="color:darkred">"De D is ingedrukt"</span>)
     avatar.ga_rechts()
 }</pre></code>
-    <p>Vergeet niet om daarna je pagina te verversen. Als je nu in het veld klikt en je drukt op 'D', dan zou je avatar naar rechts moeten gaan. De regel met console.log() is een programmeertrucje: het schrijft een berichtje in je console wanneer dit langs komt. Zo weet je of je functie is aangeroepen. Kun jij nu zelf zorgen dat W naar boven gaat, A naar rechts en S naar onder? Kun je ook zorgen dat met bepaalde letters je avatar (en het plaatje) groter of kleiner wordt?</p>
+    <p>Vergeet niet om daarna je pagina te verversen. </p>
+    <p>Als je nu in het veld klikt en je drukt op 'D', dan zou je avatar naar rechts moeten gaan.</p>
+    <p>De regel met console.log() is een programmeertrucje: het stuurt een berichtje naar je console. Zo weet je of het aanroepen van je functie is gelukt.</p>
+    <p>Kun jij nu zelf zorgen dat je met 'W' naar boven gaat, met A naar rechts en met S naar onder?<br />Kun je ook zorgen dat met bepaalde letters je avatar (en het plaatje) groter of kleiner wordt?</p>
     <h3>Loops</h3>
-    <p>Met Javascript kun je een heleboel doen, veel meer dan alleen maar commando's aanroepen. Laten we, om een eerste indruk te krijgen van de kracht van Javascript, proberen om je avatar zo snel mogelijk naar de andere kant van het veld te krijgen. Probeer deze code eens:</p>
+    <p>Met Javascript kun je nog veel meer doen behalve commando's aanroepen. Laten we, om een eerste indruk te krijgen van de kracht van Javascript, proberen om je avatar zo snel mogelijk naar de andere kant van het veld te krijgen. Probeer deze code maar eens:</p>
     <code><pre>avatar.ver_naar_rechts = function() {
     var teller = 0;
     while (teller < 100) {
@@ -98,5 +101,6 @@
         teller = teller + 1
     }   
 }</pre></code>
-    <p>Probeer deze functie is uit door in je console <code>avatar.ga_rechts()</code> te typen. Als het goed werkt, is je avatar nu 100 stapjes naar rechts gegaan. Misschien snap je niet alles van dit voorbeeldje, dat geeft niet. Je kan ermee experimenteren door van de 100 stapjes meer of minder te maken. Als je graag meer wilt leren over wat er allemaal mogelijk is met javascript, daar zijn hele boeken over geschreven. Vraag een mentor, die helpt je er graag mee verder!</p>
+    <p>Probeer deze functie uit door in je console <code>avatar.ga_rechts()</code> te typen. Als het goed werkt, is je avatar nu 100 stapjes naar rechts gegaan. Misschien snap je niet alles van dit voorbeeldje, maar dat geeft niet. Je kunt ermee experimenteren door van de 100 stapjes meer of minder te maken. </p>
+    <p>Als je graag meer wilt leren over wat er allemaal mogelijk is met Javascript, dan is dat heel makkelijk! Op internet zijn ontzettend veel leuke voorbeelden en er zijn hele boeken over volgeschreven. Vraag een mentor, die helpt je graag verder!</p>
 </body>
