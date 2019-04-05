@@ -1,102 +1,147 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Instructies voor 'Ninja Tag'-spel</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" type="text/css" href="css/instructions-style.css">
 </head>
+
 </html>
+
 <body>
     <h1>Ninja Tag</h1>
     <p>Welkom bij Ninja Tag!</p>
     <h2>Voorbereiding</h2>
     <ul>
-        <li>Download <a href="https://github.com/coderdojonijmegen/ninja-game-client/archive/master.zip">dit zip bestand</a> en pak het uit in bijvoorbeeld je Documenten map.</li>
+        <li>Download <a href="https://github.com/coderdojonijmegen/ninja-game-client/archive/master.zip">dit zip
+                bestand</a> en pak het uit in bijvoorbeeld je Documenten map.</li>
         <li>Ga naar de map <i>view</i> en open het bestand <i>spel.html</i> met de Google Chrome browser.</li>
     </ul>
     <p>Je ziet dat je meteen al meedoet aan het spel! Als je in de browser op Alt-Ctrl-J drukt (op Apple-computers Alt-Cmd-J), dan wordt de javascript-console geopend. In dat venster kun je zelf het spel veranderen en uitbreiden.</p>
     <img src="img/voorbeeld-console.png">
     <h2>Console commando's (voor de beginner)</h2>
     <h3>Avatar</h3>
-    <p>In het spel bestuur je een 'avatar'. Je avatar is een vierkantje met een kleur of een plaatje dat over het veld kan bewegen.</p><p>Je bestuurt je avatar door commando's te typen in de console. Die commando's vertellen we je zo, maar je kunt alvast wat informatie over je avatar zien door het woord in de console te typen:</p><p>[TODO: erbij zeggen dat ze de '>' niet in hoeven typen?]<br />[TODO: screenshot van de console]</p>
-    <code><span style="color:blue">&gt;</span> avatar</code>
-    <p>Druk daarna op je toetsenbord op de Enter-toets. Je ziet nu informatie in beeld. Snap je al een beetje wat het allemaal betekent?</p>
+    <p>In het spel bestuur je een 'avatar'. Je avatar is een vierkantje met een kleur of een plaatje dat over het veld
+        kan bewegen.</p>
+    <p>Je bestuurt je avatar door commando's te typen in de console. Die commando's vertellen we je zo, maar je kunt
+        alvast wat informatie over je avatar zien door het woord in de console te typen:</p>
+    <p>[TODO: erbij zeggen dat ze de '>' niet in hoeven typen?]<br />[TODO: screenshot van de console]</p>
+    <pre><code> avatar</code></pre>
+    <p>Druk daarna op je toetsenbord op de Enter-toets. Je ziet nu informatie in beeld. Snap je al een beetje wat het
+        allemaal betekent?</p>
     <h3>Naam instellen</h3>
     <p>Stel een naam in voor je avatar met het onderstaande commando. In ons voorbeeld heet de speler Jantje:</p>
     <p>In Google Chrome ziet dit commando er als volgt uit.</p>
     <img src="img/voorbeeld-naam.png">
-    <code><span style="color:blue">&gt;</span> avatar.zet_naam(<span style="color:darkred">"Jantje"</span>)</code>
+    <pre><code> avatar.zet_naam("Jantje")</code></pre>
     <p>Met dit commando heb je een bericht naar de server gestuurd dat je je naam wilt veranderen. Als de server je bericht begrepen heeft, zal hij laten weten dat je naam is veranderd.</p><p>Als meerdere spelers dezelfde naam gebruiken, zal er een getal achter je naam komen te staan. Om te zien of je naam is veranderd en waarin het is veranderd, type je:</p>
-    <code><span style="color:blue">&gt;</span> avatar.naam</code>
+    <pre><code> avatar.naam</code></pre>
     <h3>Bewegen</h3>
     <p>Beweeg nu je avatar met dit commando:</p>
-    <code><span style="color:blue">&gt;</span> avatar.ga_rechts()</code>
+    <pre><code> avatar.ga_rechts()</code></pre>
     <p>Je bent nu naar rechts bewogen. Je kunt ook naar links, naar boven en naar onder. Kun jij ontdekken hoe?</p>
     <h3>Grootte veranderen</h3>
-    <p>Je kunt veranderen hoe je avatar eruit ziet, bijvoorbeeld door hem groter of kleiner te maken. Daarvoor heeft de avatar eigenschappen die 'styles' worden genoemd. De namen zijn in het Engels: breedte is 'width', hoogte is 'height'.</p><p>Als je de styles hebt ingesteld, stuur je ze naar de server met 'stuur_styles()'. Type bijvoorbeeld onderstaande commando's:</p>
-    <code>
-        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"width"</span>] = <span style="color:darkred">"32px"</span><br>
-        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"height"</span>] = <span style="color:darkred">"48px"</span><br>
-        <span style="color:blue">&gt;</span> avatar.stuur_styles()
-    </code>
-    <p>Als het goed is, heeft je avatar nu een breedte van 32 pixels en een hoogte van 48 pixels.<br />Experimenteer met verschillende groottes. Er is een maximum en een minimum. Hoe groot kun je worden?</p>
+    <p>Je kunt veranderen hoe je avatar eruit ziet, bijvoorbeeld door hem groter of kleiner te maken. Daarvoor heeft de
+        avatar eigenschappen die 'styles' worden genoemd. De namen zijn in het Engels: breedte is 'width', hoogte is
+        'height'.</p>
+    <p>Als je de styles hebt ingesteld, stuur je ze naar de server met 'stuur_styles()'. Type bijvoorbeeld onderstaande
+        commando's:</p>
+    <pre><code> avatar.styles["width"] = "32px"
+ avatar.stuur_styles()
+ avatar.styles["height"] = "48px" </code>
+</pre>
+    <p>Als het goed is, heeft je avatar nu een breedte van 32 pixels en een hoogte van 48 pixels.<br />Experimenteer met
+        verschillende groottes. Er is een maximum en een minimum. Hoe groot kun je worden?</p>
     <h3>Kleuren en vormen</h3>
-    <p>Met dezelfde styles is het ook mogelijk om het uiterlijk van jouw avatar verder aan te passen. Verander bijvoorbeeld met onderstaande commando's de achtergrondkleur naar groen (green), rood (red) of blauw (blue), of iets heel anders. Een uitgebreide lijst met verschillende kleuren vind je op de <a href="https://www.w3schools.com/cssref/css_colors.asp" target="_blank">w3schools</a>-website.</p>
-    <code>
-        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"background-color"</span>] = <span style="color:darkred">"green"</span><br>
-        <span style="color:blue">&gt;</span> avatar.stuur_styles()
-    </code>
-    <p>Behalve de kleur veranderen, kun je ook een rand (border) toevoegen. Een rand heeft een dikte, in pixels, en een kleur. Een rand heeft ook een stijl, die je kunt kiezen uit dit lijstje: dotted, dashed, solid, double, groove, ridge, inset, outset. Probeer ze maar eens uit!</p>
-    <code>
-        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"border"</span>] = <span style="color:darkred">"2px dashed blue"</span><br>
-        <span style="color:blue">&gt;</span> avatar.stuur_styles()
-    </code>
+    <p>Met dezelfde styles is het ook mogelijk om het uiterlijk van jouw avatar verder aan te passen. Verander
+        bijvoorbeeld met onderstaande commando's de achtergrondkleur naar groen (green), rood (red) of blauw (blue), of
+        iets heel anders. Een uitgebreide lijst met verschillende kleuren vind je op de <a
+            href="https://www.w3schools.com/cssref/css_colors.asp" target="_blank">w3schools</a>-website.</p>
+    <pre><code> avatar.styles["background-color"] = "green"
+ avatar.stuur_styles()</code>
+</pre>
+    <p>Behalve de kleur veranderen, kun je ook een rand (border) toevoegen. Een rand heeft een dikte, in pixels, en een
+        kleur. Een rand heeft ook een stijl, die je kunt kiezen uit dit lijstje: dotted, dashed, solid, double, groove,
+        ridge, inset, outset. Probeer ze maar eens uit!</p>
+    <pre><code> avatar.styles["border"] = "2px dashed blue"
+ avatar.stuur_styles()</code>
+</pre>
     <p>Om je rand weer weg te halen type je:</p>
-    <code>
-        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"border"</span>] = <span style="color:darkred">"none"</span><br>
-        <span style="color:blue">&gt;</span> avatar.stuur_styles()
-    </code>
+    <pre><code> avatar.styles["border"] = "none"
+ avatar.stuur_styles() </code>
+</pre>
     <p>Je kunt ook de hoeken van je avatar aanpassen, door de zogenaamde <i>radius</i> aan te passen:</p>
-    <code>
-        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"border-radius"</span>] = <span style="color:darkred">"5px"</span><br>
-        <span style="color:blue">&gt;</span> avatar.stuur_styles()
-    </code>
+    <pre>
+    <code>avatar.styles["border-radius"] = "5px"
+avatar.stuur_styles()
+</code>
+    </pre>
     <p>Lukt het je om de radius zo te krijgen dat jouw avatar een cirkel wordt?</p>
     <h3>Een nieuw plaatje</h3>
-    <p>Je kunt ook als achtergrond een plaatje nemen. Eerst moet je het web adres weten van een leuke afbeelding, bijvoorbeeld <a href="http://45.77.139.8:3000/img/ninja.png">"http://45.77.139.8:3000/img/ninja.png"</a>. Om dit plaatje te gebruiken voor je avatar type je:</p>
-    <code><span style="color:blue">&gt;</span> avatar.zet_plaatje(<span style="color:darkred">"http://45.77.139.8:3000/img/ninja.png")</span></code>
-    <p>Let op dat dit soort adressen altijd eindigen op '.png' of '.jpg', als dat niet zo is, heb je misschien het verkeerde adres.<br>Het kan zijn dat je plaatje te groot of te klein is voor je avatar. Zoals je eerder met 'width' en 'height' de grootte van je avatar hebt bepaald, kun je ook de grootte van je afbeelding aan geven:</p>
-    <code>
-        <span style="color:blue">&gt;</span> avatar.styles[<span style="color:darkred">"background-size"</span>] = <span style="color:darkred">"32px"</span><br>
-        <span style="color:blue">&gt;</span> avatar.stuur_styles()
-    </code>
+    <p>Je kunt ook als achtergrond een plaatje nemen. Eerst moet je het web adres weten van een leuke afbeelding,
+        bijvoorbeeld <a href="http://45.77.139.8:3000/img/ninja.png">"http://45.77.139.8:3000/img/ninja.png"</a>. Om dit
+        plaatje te gebruiken voor je avatar type je:</p>
+    <pre><code>avatar.zet_plaatje("http://45.77.139.8:3000/img/ninja.png")</code></pre>
+    <p>Let op dat dit soort adressen altijd eindigen op '.png' of '.jpg', als dat niet zo is, heb je misschien het
+        verkeerde adres.Het kan zijn dat je plaatje te groot of te klein is voor je avatar. Zoals je eerder met
+        'width' en 'height' de grootte van je avatar hebt bepaald, kun je ook de grootte van je afbeelding aan geven:
+    </p>
+
+    <pre><code>avatar.styles["background-size"] = "32px"
+avatar.stuur_styles()</code></pre>
+
     <h2>Javascript (voor gevorderden)</h2>
     <p><i>Als je de console-opdrachten nog niet hebt gedaan, doe die dan eerst.</i></p>
     <h3>Functions</h3>
-    <p>Tot nu toe heb je in je console met &egrave;&egrave;n commando je avatar aangestuurd. Maar je kan ook je eigen commando's schrijven! Je kan bijvoorbeeld een commando schrijven die er voor zorgt dat jouw avatar schuin naar rechts-onder gaat. Om een commando te maken, schrijf je een function. Een function is een stukje code in een van de bestanden, die je vanuit de console kan aanroepen, zoals je tot nu toe ook al hebt gedaan.</p>
-    <p>Om te beginnen, open met een teksteditor in het mapje 'js' het bestand 'ninja.js'. Als je niet weet wat een teksteditor is, vraag dan hulp bij een mentor.<br>Dit bestand is nog helemaal leeg, want het is de bedoeling dat je daar zelf iets in gaat schrijven. Laten we een commando schrijven voor de avatar waarmee de avatar naar rechts-onder gaat:</p>
-    <code><pre>avatar.ga_rechtsonder = function() {
+    <p>Tot nu toe heb je in je console met &egrave;&egrave;n commando je avatar aangestuurd. Maar je kan ook je eigen
+        commando's schrijven! Je kan bijvoorbeeld een commando schrijven die er voor zorgt dat jouw avatar schuin naar
+        rechts-onder gaat. Om een commando te maken, schrijf je een function. Een function is een stukje code in een van
+        de bestanden, die je vanuit de console kan aanroepen, zoals je tot nu toe ook al hebt gedaan.</p>
+    <p>Om te beginnen, open met een teksteditor in het mapje 'js' het bestand 'ninja.js'. Als je niet weet wat een
+        teksteditor is, vraag dan hulp bij een mentor.Dit bestand is nog helemaal leeg, want het is de bedoeling dat
+        je daar zelf iets in gaat schrijven. Laten we een commando schrijven voor de avatar waarmee de avatar naar
+        rechts-onder gaat:</p>
+    <pre><code>avatar.ga_rechtsonder = function() {
     avatar.ga_rechts()
     avatar.ga_onder()
-}</pre></code>
-    <p>De opdrachten die tussen de '{' en de '}' staan, zijn de stapjes die jouw commando zet. Je kan dus alle opdrachten die je in de console hebt gedaan, ook in je eigen commando's zetten.<br>Als je de pagina ververst, kun je in de console nu je nieuwe commando aanroepen:</p>
-    <code><span style="color:blue">&gt;</span> avatar.ga_rechtsonder()</code>
+}</code></pre>
+    <p>De opdrachten die tussen de '{' en de '}' staan, zijn de stapjes die jouw commando zet. Je kan dus alle
+        opdrachten die je in de console hebt gedaan, ook in je eigen commando's zetten.Als je de pagina ververst,
+        kun je in de console nu je nieuwe commando aanroepen:</p>
+    <pre><code>avatar.ga_rechtsonder()</code></pre>
     <p>Kun je ook een commando schrijven die naar links-boven gaat? En een commando die 5 stapjes naar rechts gaat?</p>
     <h3>Besturen met je toestenbord</h3>
-    <p>Je kunt ook functies schrijven die automatisch worden aangeroepen als er iets gebeurt. Bijvoorbeeld wanneer een toets op je toetsenbord wordt ingedrukt. Hiervoor gebruik je het 'toetsenbord' object, waarbij de naam van je functie uit &egrave;&egrave;n enkele hoofdletter bestaat. Wanneer die hoofdletter dan wordt ingedrukt, wordt je functie aangeroepen. Probeer maar eens uit door deze code in je ninja.js bestand te zetten:</p>
-    <code><pre>toetsenbord.D = function() {
-    console.log(<span style="color:darkred">"De D is ingedrukt"</span>)
+    <p>Je kunt ook functies schrijven die automatisch worden aangeroepen als er iets gebeurt. Bijvoorbeeld wanneer een
+        toets op je toetsenbord wordt ingedrukt. Hiervoor gebruik je het 'toetsenbord' object, waarbij de naam van je
+        functie uit &egrave;&egrave;n enkele hoofdletter bestaat. Wanneer die hoofdletter dan wordt ingedrukt, wordt je
+        functie aangeroepen. Probeer maar eens uit door deze code in je ninja.js bestand te zetten:</p>
+    <pre><code>toetsenbord.D = function() {
+    console.log("De D is ingedrukt")
     avatar.ga_rechts()
-}</pre></code>
-    <p>Vergeet niet om daarna je pagina te verversen. Als je nu in het veld klikt en je drukt op 'D', dan zou je avatar naar rechts moeten gaan. De regel met console.log() is een programmeertrucje: het schrijft een berichtje in je console wanneer dit langs komt. Zo weet je of je functie is aangeroepen. Kun jij nu zelf zorgen dat W naar boven gaat, A naar rechts en S naar onder? Kun je ook zorgen dat met bepaalde letters je avatar (en het plaatje) groter of kleiner wordt?</p>
+}</code></pre>
+    <p>Vergeet niet om daarna je pagina te verversen. Als je nu in het veld klikt en je drukt op 'D', dan zou je avatar
+        naar rechts moeten gaan. De regel met console.log() is een programmeertrucje: het schrijft een berichtje in je
+        console wanneer dit langs komt. Zo weet je of je functie is aangeroepen. Kun jij nu zelf zorgen dat W naar boven
+        gaat, A naar rechts en S naar onder? Kun je ook zorgen dat met bepaalde letters je avatar (en het plaatje)
+        groter of kleiner wordt?</p>
     <h3>Loops</h3>
-    <p>Met Javascript kun je een heleboel doen, veel meer dan alleen maar commando's aanroepen. Laten we, om een eerste indruk te krijgen van de kracht van Javascript, proberen om je avatar zo snel mogelijk naar de andere kant van het veld te krijgen. Probeer deze code eens:</p>
-    <code><pre>avatar.ver_naar_rechts = function() {
+    <p>Met Javascript kun je een heleboel doen, veel meer dan alleen maar commando's aanroepen. Laten we, om een eerste
+        indruk te krijgen van de kracht van Javascript, proberen om je avatar zo snel mogelijk naar de andere kant van
+        het veld te krijgen. Probeer deze code eens:</p>
+    <pre><code>avatar.ver_naar_rechts = function() {
     var teller = 0;
     while (teller < 100) {
         avatar.ga_rechts()
         teller = teller + 1
     }   
-}</pre></code>
-    <p>Probeer deze functie is uit door in je console <code>avatar.ga_rechts()</code> te typen. Als het goed werkt, is je avatar nu 100 stapjes naar rechts gegaan. Misschien snap je niet alles van dit voorbeeldje, dat geeft niet. Je kan ermee experimenteren door van de 100 stapjes meer of minder te maken. Als je graag meer wilt leren over wat er allemaal mogelijk is met javascript, daar zijn hele boeken over geschreven. Vraag een mentor, die helpt je er graag mee verder!</p>
+}</code></pre>
+    <p>Probeer deze functie is uit door in je console <code>avatar.ga_rechts()</code> te typen. Als het goed werkt, is
+        je avatar nu 100 stapjes naar rechts gegaan. Misschien snap je niet alles van dit voorbeeldje, dat geeft niet.
+        Je kan ermee experimenteren door van de 100 stapjes meer of minder te maken. Als je graag meer wilt leren over
+        wat er allemaal mogelijk is met javascript, daar zijn hele boeken over geschreven. Vraag een mentor, die helpt
+        je er graag mee verder!</p>
 </body>
