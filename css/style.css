@@ -72,28 +72,28 @@ img {
 }
 
 #left {
-    position: absolute;
+    position: fixed;
     bottom: 100px;
     right: 155px;
     background-image: url('../img/left.png');
 }
 
 #right {
-    position: absolute;
+    position: fixed;
     bottom: 100px;
     right: 45px;
     background-image: url('../img/right.png');
 }
 
 #up {
-    position: absolute;
+    position: fixed;
     bottom: 155px;
     right: 100px;
     background-image: url('../img/up.png');
 }
 
 #down {
-    position: absolute;
+    position: fixed;
     bottom: 45px;
     right: 100px;
     background-image: url('../img/down.png');

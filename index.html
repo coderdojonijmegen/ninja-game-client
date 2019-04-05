@@ -40,23 +40,24 @@
     <img src="img/voorbeeld-naam.png">
     <pre><code> avatar.zet_naam(<span style="color:darkred">"Jantje"</span>)</code></pre>
     <p>Met dit commando heb je een bericht naar de server gestuurd dat je je naam wilt veranderen. Als de server je bericht begrepen heeft, zal hij laten weten dat je naam is veranderd.</p><p>Als meerdere spelers dezelfde naam gebruiken, zal er een getal achter je naam komen te staan. Om te zien of je naam is veranderd en waarin het is veranderd, type je:</p>
-    <pre><code>avatar.naam</code></pre>
+    <pre><code> avatar.naam</code></pre>
     <h3>Bewegen</h3>
     <p>Beweeg nu je avatar met dit commando:</p>
     <pre><code> avatar.ga_rechts()</code></pre>
     <p>Je bent nu naar rechts bewogen. Je kunt ook naar links, naar boven en naar onder. Kun jij ontdekken hoe?</p>
     <h3>Grootte veranderen</h3>
     <p>Je kunt veranderen hoe je avatar eruit ziet, bijvoorbeeld door hem groter of kleiner te maken. Daarvoor heeft de
-        avatar eigenschappen die 'styles' worden genoemd. De namen zijn in het Engels: breedte is 'width', hoogte is
-        'height'.</p>
-    <p>Als je de styles hebt ingesteld, stuur je ze naar de server met 'stuur_styles()'. Type bijvoorbeeld onderstaande
-        commando's:</p>
-    <pre><code> avatar.styles["width"] = "32px"
- avatar.stuur_styles()
- avatar.styles["height"] = "48px" </code>
-</pre>
-    <p>Als het goed is, heeft je avatar nu een breedte van 32 pixels en een hoogte van 48 pixels.<br />Experimenteer met
-        verschillende groottes. Er is een maximum en een minimum. Hoe groot kun je worden?</p>
+        avatar eigenschappen die 'styles' worden genoemd, stijlen in het Nederlands. Een aantal van deze stijlen zijn in het Engels:
+        breedte is 'width', hoogte is 'height'.</p>
+    <p>Type bijvoorbeeld het onderstaande commando:</p>
+    <pre><code> avatar.styles["width"] = "32px" </code>
+    </pre>
+    Als het goed is zie je dat je avatar nu van vorm is veranderd, de breedte is nu 32 pixels. Zien andere spelers jou ook al zo?
+    Nee, daarvoor moet je eerst de server vertellen dat je er anders uit ziet. Je stuurt je nieuwe stijl naar de server met 'stuur_styles()': 
+    <pre><code> avatar.stuur_styles()</code>
+    </pre>
+    <p>Als het goed is, heeft je avatar nu ook bij de andere spelers een breedte van 32 pixels.<br />Experimenteer eens met
+        verschillende hoogtes en breedtes. Er is een maximum en een minimum. Hoe groot kun je worden? En hoe klein?</p>
     <h3>Kleuren en vormen</h3>
     <p>Met dezelfde styles is het ook mogelijk om het uiterlijk van jouw avatar verder aan te passen. Verander
         bijvoorbeeld met onderstaande commando's de achtergrondkleur naar groen (green), rood (red) of blauw (blue), of
@@ -77,24 +78,39 @@
 </pre>
     <p>Je kunt ook de hoeken van je avatar aanpassen, door de zogenaamde <i>radius</i> aan te passen:</p>
     <pre>
-    <code>avatar.styles["border-radius"] = "5px"
-avatar.stuur_styles()
-</code>
+    <code> avatar.styles["border-radius"] = "5px"
+ avatar.stuur_styles()</code>
     </pre>
     <p>Lukt het je om de radius zo te krijgen dat jouw avatar een cirkel wordt?</p>
     <h3>Een nieuw plaatje</h3>
     <p>Je kunt ook als achtergrond een plaatje nemen. Eerst moet je het web adres weten van een leuke afbeelding,
         bijvoorbeeld <a href="http://45.77.139.8:3000/img/ninja.png">"http://45.77.139.8:3000/img/ninja.png"</a>. Om dit
         plaatje te gebruiken voor je avatar type je:</p>
-    <pre><code>avatar.zet_plaatje("http://45.77.139.8:3000/img/ninja.png")</code></pre>
+    <pre><code> avatar.zet_plaatje("http://45.77.139.8:3000/img/ninja.png")</code></pre>
     <p>Let op dat dit soort adressen altijd eindigen op '.png' of '.jpg', als dat niet zo is, heb je misschien het
         verkeerde adres. </br> </br> Het kan zijn dat je plaatje te groot of te klein is voor je avatar. Zoals je eerder met
         'width' en 'height' de grootte van je avatar hebt bepaald, kun je ook de grootte van je afbeelding aan geven:
     </p>
 
-    <pre><code>avatar.styles[<span style="color:darkred">"background-size"</span>] = "32px" 
-avatar.stuur_styles()</code></pre>
-
+    <pre><code > avatar.styles[<span style="color:darkred">"background-size"</span>] = "32px" 
+ avatar.stuur_styles()</code></pre>
+    <h2>HTML en CSS: de spelomgeving</h2>
+    <p>Hoe het spel er voor jou uitziet wordt bepaald door de html en de css code. In het html bestand <i>spel.html</i>, dat je hebt
+        geopend in je browser worden bijvoorbeeld de balk bovenin en het speelveld gemaakt. Met het css bestand <i>style.css</i>
+        in de map <i>css</i> wordt bepaald hoe de stukjes html er uit moeten zien, bijvoorbeeld de grootte en kleur van letters.
+    <p>Let op: als je iets verandert in de html en/of css dan zul je dat alleen op je eigen scherm zien, de veranderingen worden niet
+        doorgestuurd naar de server.</p>
+    <p>Kijk nu eens of je bijvoorbeeld een achtergrondkleur of -plaatje voor het speelveld kunt maken. Het speelveld heeft in het html
+        bestand een zogenaamd "id" (van "identificatie") gekregen, een naam die je in het css bestand kunt gebruiken om aan te geven
+        dat je alleen de <i>styling</i> van dat stuk html wilt veranderen. Je kunt het speelveld een groene achtergrondkleur geven door
+        <pre>
+        <code>background-color: green;</code>
+        </pre>toe te voegen aan het <i>drawing</i> onderdeel in de css.
+        Een plaatje werkt bijna hetzelfde, hiervoor voeg je bijvoorbeeld dit toe:
+        <pre>
+        <code>background-image: url("../img/background.png");</code>
+        </pre>Het plaatje <i>background</i> staat al in de map <i>img</i>; je kunt natuurlijk ook je eigen plaatje kiezen.
+            </p>
     <h2>Javascript (voor gevorderden)</h2>
     <p><i>Als je de console-opdrachten hierboven nog niet hebt gedaan, doe die dan eerst.</i></p>
     <h3>Functions</h3>
