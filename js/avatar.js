@@ -27,6 +27,11 @@ function create_avatar(api_) {
         // Stuur je styles naar de server.
         stuur_styles: function stuur_styles() {
             api.set_styles(this.styles);
+        },
+        // Stel een plaatje in als achtergrond.
+        zet_plaatje: function zet_plaatje(url) {
+            this.styles['background-image'] = 'url(' + url + ')'
+            api.set_styles({'background-image': this.styles['background-image']})
         }
     }
 
